@@ -1,0 +1,1365 @@
+@charset "UTF-8";
+/* stylelint-disable */
+/* stylelint-enable */
+/* stylelint-disable */
+/**
+* Селекторы для таргетинга на конкретные браузеры без влияния на специфику или
+* ограничение использования в медиа-запросах
+*
+* Плюсы:
+* - Работает с медиа-запросами
+*
+* Минусы:
+* - Не может использоваться с @extend, так как это приведет к недействительности других селекторов
+*/
+/**
+* Целевой Internet Explorer, но не Edge
+*
+* @demo
+*	div {
+*		@include browser-ie () {
+*			// ...
+*		}
+*	}
+*/
+/**
+* Target IE-Edge
+*/
+/**
+* Target Firefox
+*/
+/**
+* Target Safari
+*/
+/**
+* Target all WebKit browsers
+*/
+/**
+* Remove the unit of a length
+*
+* @param {Number} $number - Number to remove unit from
+* @return {Number} - Unitless number
+*/
+/**
+* Returns nth property from css property list
+*
+* @property {map} $list List
+* @property {number} $index Item index
+*
+* @example
+*	$bottom-margin: css-nth(10px 20px 30px 40px, 3); // 30px
+*	$bottom-margin: css-nth(10px 20px, 3); // 10px
+*/
+/**
+* Remove nth elements from the list
+*
+* @property {map} $list List
+* @property {number} $index Item index
+*
+* @example
+*	$list: remove-nth(10px 20px 30px 40px, 3); // 10px 20px 40px
+*/
+/**
+* In each $list pair of $breakpoint: $value replaces all values with 'inherit'
+* except for one in $index position
+*
+* 'inherit' value when used with 'margins' or 'paddings' mixin will not produce any output
+*
+* @example
+*	$spacer: (xs: 10px 11px 12px 13px, md: 20px 0);
+*
+*	$spacer-top-only: breakpointPickCssNth($spacer, 1);
+* => (xs: 10px inherit inherit inherit, md: 20px inherit inherit inherit)
+*	@include margins($spacer-top-only);
+*
+*	$spacer-bottom-only: breakpointPickCssNth($spacer, 3);
+* => (xs: inherit inherit 12px inherit, md: inherit inherit 20px inherit)
+*	@include paddings($spacer-bottom-only);
+*/
+/**
+* In each $list pair of $breakpoint: $value replaces all values with 'inherit'
+* except for top (first) and bottom (third) properties
+*
+* @example
+*	$spacer: (xs: 10px 11px 12px 13px, md: 20px 0);
+*
+*	$spacer-top-bottom: breakpoint-pick-top-bottom($spacer);
+* => (xs: 10px inherit 12px inherit, md: 20px inherit 20px inherit)
+*	@include margins($spacer-top-bottom);
+*/
+/**
+* In each $list pair of $breakpoint: $value replaces all values with 'inherit'
+* except for right (second) and left (fourth) properties
+*
+* @example
+*	$spacer: (xs: 10px 11px 12px 13px, md: 20px 0);
+*
+*	$spacer-left-right: breakpoint-pick-top-bottom($spacer);
+* => (xs: inherit 11px inherit 13px, md: inherit 0 inherit 0)
+*	@include margins($spacer-left-right);
+*/
+/**
+* In each $list pair of $breakpoint: $value merges all values skipping 'inherit'
+*
+* @example
+*	$list-a: (xs: 10px inherit 20px inherit, md: 30px inherit);
+*	$list-b: (xs: 40px inherit inherit inherit, md: inherit 50px);
+*
+*	$list-result: breakpointMapMerge($list-a, $list-b);
+*	// (xs: 40px inherit 20px inherit, md: 30px 50px);
+*/
+/**
+* Returns deeply nested property from a map
+*
+* @function mapGetDeep Deep get for sass maps
+* @author https://css-tricks.com/snippets/sass/deep-getset-maps/
+* @param {Map} $map - Map
+* @param {Arglist} $keys - Key chain
+*
+* @example
+*	$paddings: mapGetDeep($grid-containers, default, paddings, xs);
+*/
+/**
+* Mixin for object-fit plugin
+*
+* @see https://github.com/bfred-it/object-fit-images
+* @see components/_background.scss
+* @example
+*	@include object-fit(contain);
+*	@include object-fit(cover, top);
+*/
+/**
+* Split string into a list
+*
+* @property {string} $string String
+* @property {string} $separator Separator
+*
+* @example
+*	$list: str-split("hello+world", "+"); // (hello, world)
+*/
+/**
+* Converts SVG into data url so that this SVG could be used as a
+* background image
+*
+* @example
+*	background-image: svgtodataurl("<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">...</svg>");
+*/
+/**
+* Remove keys from the map
+*
+* @param {Map} $map - Map from which to remove items
+* @param {List} $keys - List of keys which to remove
+* @return {Map} - Map without the specified keys
+*/
+/**
+* Качество рендеринга изображений
+* В Chrome качество фонового изображения не самое лучшее при использовании background-size
+*/
+.sprite-21vek {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background: url("../images/sprites.png") -654px -290px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-21vek {
+      background-image: url("../images/sprites@2x.png"); } }
+
+.sprite-hands {
+  display: inline-block;
+  vertical-align: middle;
+  width: 512px;
+  height: 288px;
+  background: url("../images/sprites.png") -502px 0px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-hands {
+      background-image: url("../images/sprites@2x.png"); } }
+
+.sprite-head {
+  display: inline-block;
+  vertical-align: middle;
+  width: 150px;
+  height: 150px;
+  background: url("../images/sprites.png") -502px -290px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-head {
+      background-image: url("../images/sprites@2x.png"); } }
+
+.sprite-integral {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background: url("../images/sprites.png") -686px -290px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-integral {
+      background-image: url("../images/sprites@2x.png"); } }
+
+.sprite-jcs {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background: url("../images/sprites.png") -718px -290px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-jcs {
+      background-image: url("../images/sprites@2x.png"); } }
+
+.sprite-man {
+  display: inline-block;
+  vertical-align: middle;
+  width: 500px;
+  height: 500px;
+  background: url("../images/sprites.png") 0px 0px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-man {
+      background-image: url("../images/sprites@2x.png"); } }
+
+.sprite-oz {
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  background: url("../images/sprites.png") -750px -290px/1014px 500px no-repeat; }
+  @media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
+    .sprite-oz {
+      background-image: url("../images/sprites@2x.png"); } }
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../fonts/SFProDisplay-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; }
+
+@font-face {
+  font-family: "SF Pro Display";
+  src: url("../fonts/SFProDisplay-Bold.woff2") format("woff2"), url("../fonts/SFProDisplay-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap; }
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0; }
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button; }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+  padding: 0.35em 0.75em 0.625em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block; }
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item; }
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none; }
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+  display: none; }
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0; }
+
+html {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "SF Pro Display";
+  scroll-behavior: smooth; }
+  html.has-cursor,
+  html.has-cursor * {
+    cursor: none !important; }
+  html.is-lock-scroll,
+  html.is-lock-scroll body {
+    overflow: hidden; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-decoration-skip: objects;
+          text-decoration-skip: objects;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+          text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fafafa; }
+
+main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+
+p {
+  margin: 0; }
+
+a,
+button {
+  outline: none;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  cursor: pointer; }
+
+a {
+  text-decoration: none;
+  color: currentColor; }
+
+svg {
+  display: block;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  width: 100%;
+  height: 100%;
+  fill: currentColor; }
+
+figure,
+picture {
+  display: inline-block;
+  margin: 0;
+  line-height: 0; }
+  figure img,
+  picture img {
+    width: 100%; }
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+
+img[draggable="false"] {
+  pointer-events: none;
+  -webkit-user-drag: none; }
+
+fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0; }
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+video {
+  outline: none;
+  width: 100%;
+  height: 100%; }
+
+iframe {
+  display: block; }
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  text-align: center;
+  background-color: transparent;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .btn__content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    min-width: 100%;
+    color: currentColor;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0); }
+
+.js-lazy-load:not(.is-loaded) {
+  max-height: 50vh; }
+
+.container {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1176px;
+  padding: 0 18px; }
+
+.site {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  min-height: var(--vh);
+  overflow: hidden; }
+  .site section + section {
+    margin-top: 200px; }
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .site section + section {
+        margin-top: 100px; } }
+    @media (max-width: 767px) {
+      .site section + section {
+        margin-top: 40px; } }
+
+/* stylelint-disable */
+/*
+* Немедленно переместите любую анимацию в конечную точку, если пользователь установил свое устройство в положение "prefers reduced motion".
+* Это может привести к плохим(непреднамеренным) последствиям. Удалите по мере необходимости и напишите свой собственный код для prefers-reduced-motion.
+*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    -webkit-animation-duration: 0.001s !important;
+            animation-duration: 0.001s !important;
+    -webkit-animation-delay: 0s !important;
+            animation-delay: 0s !important;
+    -webkit-transition-duration: 0.001s !important;
+         -o-transition-duration: 0.001s !important;
+            transition-duration: 0.001s !important;
+    -webkit-transition-delay: 0s !important;
+         -o-transition-delay: 0s !important;
+            transition-delay: 0s !important; } }
+
+/* stylelint-enable */
+.is-hidden {
+  display: none !important; }
+
+.is-hide {
+  opacity: 0; }
+
+@media (max-width: 1024px) {
+  .for-desktop {
+    display: none !important; } }
+
+@media (min-width: 1025px) {
+  .for-tablet {
+    display: none !important; } }
+
+@media (max-width: 767px) {
+  .for-tablet {
+    display: none !important; } }
+
+@media (min-width: 1025px) {
+  .for-mobile {
+    display: none !important; } }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .for-mobile {
+    display: none !important; } }
+
+@media (min-width: 1025px) {
+  .for-devices {
+    display: none !important; } }
+
+.clearfix {
+  overflow: auto; }
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0); }
+
+/* stylelint-disable */
+.dont-break-out {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
+
+/* stylelint-enable */
+.header {
+  position: relative;
+  padding-top: 100px;
+  margin-bottom: -21px;
+  z-index: 5; }
+  .header__container {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .header__menu {
+    position: relative;
+    -webkit-transition: left 0.3s;
+    -o-transition: left 0.3s;
+    transition: left 0.3s; }
+    .header__menu::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: -32px;
+      width: 104px;
+      height: 156px;
+      margin-top: -107px;
+      pointer-events: none;
+      z-index: -1;
+      background-image: url('data:image/svg+xml,			<svg width="104" height="156" viewBox="0 0 104 156" fill="none" xmlns="http://www.w3.org/2000/svg">			<path d="M2.99985 146C58.9997 132.5 88.9999 71 94 0.999984" stroke="url(%23paint0_linear_12623_204)" stroke-width="20"/>			<defs>			<linearGradient id="paint0_linear_12623_204" x1="175.577" y1="-393.879" x2="-862.693" y2="645.723" gradientUnits="userSpaceOnUse">			<stop offset="0.254138" stop-color="%23FCDED1" stop-opacity="0"/>			<stop offset="0.301521" stop-color="%23FCDED1"/>			<stop offset="0.341368" stop-color="%23FCDED1" stop-opacity="0"/>			</linearGradient>			</defs>			</svg>			'); }
+    .header__menu.is-active {
+      left: 0; }
+  .header__link {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    color: #282a33;
+    margin-left: 30px; }
+    .header__link:first-child {
+      margin-left: 0; }
+  .header__burger {
+    z-index: 100;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: -1.5px 0;
+    width: 26px;
+    color: #282a33;
+    display: none; }
+    .header__burger span {
+      display: block;
+      margin: 3px 0;
+      width: 26px;
+      height: 2px;
+      background-color: currentColor;
+      -webkit-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s; }
+    .header__burger.is-active span:first-child {
+      -webkit-transform: translate(0, 8px) rotate(-45deg);
+          -ms-transform: translate(0, 8px) rotate(-45deg);
+              transform: translate(0, 8px) rotate(-45deg); }
+    .header__burger.is-active span:nth-child(2) {
+      opacity: 0; }
+    .header__burger.is-active span:last-child {
+      -webkit-transform: translate(0, -8px) rotate(45deg);
+          -ms-transform: translate(0, -8px) rotate(45deg);
+              transform: translate(0, -8px) rotate(45deg); }
+  @media (min-width: 768px) {
+    .header__menu {
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important; } }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .header {
+      padding-top: 50px; } }
+  @media (max-width: 767px) {
+    .header {
+      padding-top: 29px;
+      margin-bottom: -26px; }
+      .header__menu {
+        position: absolute;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        padding: 60px 40px;
+        z-index: 10; }
+        .header__menu::after {
+          top: 27px;
+          left: 50px;
+          margin-top: 0;
+          width: 48px;
+          height: 70px;
+          background-image: url('data:image/svg+xml,				<svg width="48" height="70" viewBox="0 0 48 70" fill="none" xmlns="http://www.w3.org/2000/svg">				<path d="M1.91817 65.0059C26.6376 59.0467 39.8803 31.8994 42.0874 1.00003" stroke="url(%23paint0_linear_12654_8)" stroke-width="10"/>				<defs>				<linearGradient id="paint0_linear_12654_8" x1="78.0971" y1="-173.307" x2="-380.216" y2="285.593" gradientUnits="userSpaceOnUse">				<stop offset="0.254138" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.301521" stop-color="%23FCDED1"/>				<stop offset="0.341368" stop-color="%23FCDED1" stop-opacity="0"/>				</linearGradient>				</defs>				</svg>				'); }
+      .header__link {
+        margin: 0px 0 40px;
+        display: table; }
+      .header__burger {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; } }
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: auto;
+  width: 100%;
+  padding-top: 200px;
+  padding-bottom: 48px; }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .footer {
+      padding-top: 100px; } }
+  @media (max-width: 767px) {
+    .footer {
+      padding-top: 40px;
+      padding-bottom: 40px; }
+      .footer__picture {
+        width: 100%;
+        max-width: 280px;
+        height: 195px;
+        background: url("../images/sprites.png") -401.6px 0px/724.28571px 357.14286px no-repeat; } }
+
+.caption {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 50px;
+  color: #282a33; }
+  @media (max-width: 767px) {
+    .caption {
+      font-size: 28px;
+      line-height: 40px; } }
+  .caption--middle {
+    font-size: 24px;
+    line-height: 29px; }
+    @media (max-width: 767px) {
+      .caption--middle {
+        font-size: 20px;
+        line-height: 24px; } }
+  .caption--small {
+    font-size: 14px;
+    line-height: 18px; }
+
+.textSimple {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #282a33; }
+
+.social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px; }
+  .social li {
+    margin: 0 10px; }
+  .social__link {
+    width: 25px;
+    height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-radius: 5px;
+    background-color: #282a33;
+    padding: 6px; }
+
+.rectangle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .rectangle__item {
+    position: relative;
+    z-index: 3;
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 8px;
+    -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+  .rectangle__item--interface {
+    background: conic-gradient(from 225deg at 94.13% 5.18%, #afaafe 0deg, #928cf8 360deg);
+    border-color: #ccc9fd; }
+  .rectangle__item--funds {
+    background: conic-gradient(from 225deg at 94.19% 5.24%, #ffe975 0deg, #ffcd3d 360deg);
+    border-color: #fff3b5; }
+  .rectangle__item--CG {
+    background: conic-gradient(from 225deg at 94.19% 5.24%, #fe74a6 0deg, #ee5087 360deg);
+    border-color: #ff99be; }
+  .rectangle__item--GD {
+    background: conic-gradient(from 225deg at 94.19% 5.24%, #79cafb 0deg, #4bbef2 360deg);
+    border-color: #c0f0ff; }
+  .rectangle__item--SEO {
+    background: conic-gradient(from 225deg at 94.19% 5.24%, #ffbc89 0deg, #ffa25a 360deg);
+    border-color: #ffd5b4; }
+  .rectangle__item--information {
+    background: conic-gradient(from 225deg at 94.19% 5.24%, #66dfbc 0deg, #3dc39b 360deg);
+    border-color: #7cf5d2; }
+  .rectangle__item--center {
+    margin: 0 -5px; }
+  .rectangle__item--middle {
+    width: 18px;
+    height: 18px;
+    border-width: 3px;
+    border-radius: 4px;
+    z-index: 2; }
+  .rectangle__item--small {
+    width: 12px;
+    height: 12px;
+    border-width: 0px;
+    border-radius: 2px;
+    margin-right: -3px; }
+
+.experience__item {
+  margin-top: 60px; }
+  .experience__item:first-child {
+    margin-top: 0; }
+
+.experience__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.experience__date {
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #828282;
+  margin-bottom: 6px; }
+
+.experience__caption {
+  margin-right: 8px; }
+
+.experience__company {
+  margin-top: 8px; }
+
+.experience__text {
+  margin-top: 6px; }
+
+.experience__links {
+  margin-top: 1px; }
+  .experience__links li + li {
+    margin-top: 2px; }
+
+.experience__link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #2f80ed;
+  text-decoration: underline;
+  text-underline-offset: 3px; }
+
+.experience__rectangle {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+
+.education {
+  max-width: 150px;
+  margin: 0 auto; }
+  .education__item {
+    text-align: center;
+    margin-top: 34px; }
+    .education__item:first-child {
+      margin-top: 0; }
+  .education__text {
+    text-align: center;
+    margin-top: 8px; }
+  .education__rectangle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 13px; }
+  @media (max-width: 767px) {
+    .education {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      max-width: 100%; }
+      .education__item {
+        width: calc(100% / 2);
+        margin-top: 0;
+        margin-bottom: 24px;
+        padding: 0 12px; } }
+
+.company {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-columns: auto auto 1fr;
+  grid-template-columns: auto auto 1fr; }
+  .company__logo {
+    margin-right: 8px; }
+  .company__name {
+    margin-right: 8px; }
+  @media (max-width: 767px) {
+    .company {
+      -ms-grid-columns: auto 1fr;
+      grid-template-columns: auto 1fr; }
+      .company__logo {
+        -ms-grid-row: 1;
+        -ms-grid-row-span: 2;
+        grid-row: 1/3; } }
+
+.greetings {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .greetings__head {
+    width: 100%;
+    margin-bottom: 40px; }
+  .greetings__body {
+    max-width: 560px; }
+  .greetings__info {
+    min-width: 270px; }
+  .greetings__text {
+    margin-top: 30px; }
+  .greetings__links {
+    position: relative;
+    font-weight: 400;
+    font-size: 14px;
+    color: #282a33; }
+    .greetings__links li + li {
+      margin-top: 15px; }
+  .greetings__social {
+    margin-top: 15px; }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .greetings__body {
+      max-width: 100%; }
+    .greetings__info {
+      margin-top: 20px;
+      min-width: 100%; } }
+  @media (max-width: 767px) {
+    .greetings__body {
+      max-width: 100%; }
+    .greetings__info {
+      margin-top: 20px;
+      min-width: 100%; }
+    .greetings__head {
+      width: 75px;
+      height: 75px;
+      -webkit-transform: translateX(8px);
+          -ms-transform: translateX(8px);
+              transform: translateX(8px);
+      margin-bottom: 30px; }
+    .greetings__picture {
+      width: 100%;
+      height: 100%;
+      background: url("../images/sprites.png") -251px -145px/507px 250px no-repeat; }
+    .greetings__text {
+      margin-top: 20px; } }
+
+.about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative; }
+  .about::after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+    width: 100%;
+    height: 363px;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    top: -294px;
+    z-index: -1;
+    pointer-events: none;
+    background-image: url('data:image/svg+xml,			<svg width="1155" height="363" viewBox="0 0 1155 363" fill="none" xmlns="http://www.w3.org/2000/svg">				<path d="M4.99994 236.118C80.1256 193.852 377.653 282.54 477.325 308.87C576.996 335.199 810.555 393.401 944.443 308.87C1078.33 224.339 1145 3 1145 3" stroke="url(%23paint0_linear_12623_331)" stroke-width="20"/>				<defs>				<linearGradient id="paint0_linear_12623_331" x1="1165.36" y1="159.209" x2="4.25644" y2="160.007" gradientUnits="userSpaceOnUse">				<stop stop-color="%23FCDED1" stop-opacity="0.3"/>				<stop offset="0.217132" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.721638" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.99131" stop-color="%23FCDED1" stop-opacity="0.5"/>				</linearGradient>				</defs>			</svg>		'); }
+  .about__experience {
+    width: 100%;
+    max-width: 560px; }
+  .about__man {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: -105px;
+    pointer-events: none;
+    z-index: -1; }
+  .about__content {
+    margin-top: 30px; }
+  .about__education {
+    width: 100%;
+    max-width: 269px; }
+    .about__education .caption {
+      text-align: center; }
+    .about__education .education {
+      padding: 10px 0; }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .about::after {
+      top: -260px; }
+    .about__experience {
+      max-width: 400px; }
+    .about__education {
+      max-width: 170px; }
+    .about__man {
+      width: 250px;
+      height: 250px;
+      margin-left: -20px; }
+      .about__man .sprite-man {
+        width: 100%;
+        height: 100%;
+        background-size: cover; } }
+  @media (max-width: 767px) {
+    .about::after {
+      top: -218px;
+      left: -10px;
+      width: calc(100% + 20px);
+      background-image: url('data:image/svg+xml,			<svg width="370" height="123" viewBox="0 0 370 123" fill="none" xmlns="http://www.w3.org/2000/svg">				<path d="M5.00001 75.7341C28.3944 62.5725 121.045 90.1902 152.084 98.3893C183.122 106.588 255.853 124.712 297.546 98.3893C339.239 72.0661 360 3.14037 360 3.14037" stroke="url(%23paint0_linear_12654_136)" stroke-width="20"/>				<defs>				<linearGradient id="paint0_linear_12654_136" x1="366.339" y1="51.7843" x2="4.76845" y2="52.033" gradientUnits="userSpaceOnUse">				<stop stop-color="%23FCDED1" stop-opacity="0.3"/>				<stop offset="0.217132" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.721638" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.99131" stop-color="%23FCDED1" stop-opacity="0.5"/>				</linearGradient>				</defs>			</svg>			'); }
+    .about__content {
+      margin-top: 20px; }
+    .about__man {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 200px;
+      height: 200px;
+      margin: 40px auto; }
+      .about__man .sprite-man {
+        width: 100%;
+        height: 100%;
+        background-size: cover; }
+    .about__education {
+      max-width: 100%; }
+      .about__education > .caption {
+        text-align: left; }
+      .about__education .education {
+        padding: 3px 0; } }
+
+.skills {
+  position: relative; }
+  .skills::after {
+    content: "";
+    position: absolute;
+    top: -192px;
+    left: 0;
+    width: 100%;
+    height: 363px;
+    pointer-events: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+    background-image: url('data:image/svg+xml,			<svg width="1155" height="363" viewBox="0 0 1155 363" fill="none" xmlns="http://www.w3.org/2000/svg">			<path d="M1150 126.882C1074.87 169.148 777.347 80.4595 677.675 54.1303C578.004 27.801 344.445 -30.4006 210.557 54.1303C76.6701 138.661 10 360 10 360" stroke="url(%23paint0_linear_21_11)" stroke-width="20"/>			<defs>			<linearGradient id="paint0_linear_21_11" x1="-10.3566" y1="203.791" x2="1150.74" y2="202.993" gradientUnits="userSpaceOnUse">			<stop offset="0.0833333" stop-color="%23FCDED1" stop-opacity="0"/>			<stop offset="0.322917" stop-color="%23FCDED1" stop-opacity="0.6"/>			<stop offset="0.713542" stop-color="%23FCDED1" stop-opacity="0"/>			<stop offset="0.911458" stop-color="%23FCDED1" stop-opacity="0.2"/>			</linearGradient>			</defs>			</svg>		'); }
+  .skills__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 28px -15px 0; }
+  .skills__item {
+    width: calc(100% / 4);
+    padding: 0 15px; }
+  .skills__text {
+    margin-top: 8px; }
+  .skills__line {
+    position: absolute;
+    left: -10px;
+    top: -193px;
+    pointer-events: none;
+    z-index: -1; }
+    .skills__line svg {
+      fill: transparent; }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .skills::after {
+      top: -92px; } }
+  @media (max-width: 767px) {
+    .skills::after {
+      top: -62px;
+      left: -10px;
+      width: calc(100% + 20px);
+      background-image: url('data:image/svg+xml,			<svg width="370" height="122" viewBox="0 0 370 122" fill="none" xmlns="http://www.w3.org/2000/svg">				<path d="M365 46.3975C341.606 59.5591 248.955 31.9414 217.916 23.7423C186.878 15.5433 114.147 -2.58089 72.4543 23.7423C30.7613 50.0655 10 118.991 10 118.991" stroke="url(%23paint0_linear_12654_156)" stroke-width="20"/>				<defs>				<linearGradient id="paint0_linear_12654_156" x1="3.66088" y1="70.3473" x2="365.232" y2="70.0986" gradientUnits="userSpaceOnUse">					<stop offset="0.0833333" stop-color="%23FCDED1" stop-opacity="0"/>					<stop offset="0.322917" stop-color="%23FCDED1" stop-opacity="0.6"/>					<stop offset="0.713542" stop-color="%23FCDED1" stop-opacity="0"/>					<stop offset="0.911458" stop-color="%23FCDED1" stop-opacity="0.2"/>				</linearGradient>				</defs>			</svg>			'); }
+    .skills__list {
+      margin: 20px 0 0; }
+    .skills__item {
+      width: 100%;
+      padding: 0;
+      margin-top: 14px; }
+      .skills__item:first-child {
+        margin-top: 0; } }
+
+.home {
+  padding: 80px 20px; }
+  .home__picture {
+    display: block;
+    margin: 0 auto 40px;
+    max-width: 500px;
+    opacity: 0;
+    -webkit-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+    .home__picture[data-loaded="true"] {
+      opacity: 1; }
+    .home__picture--2 {
+      margin-top: 40px;
+      margin-bottom: 0; }
+  .home__text {
+    margin: 0 auto;
+    max-width: 500px;
+    font-size: 20px;
+    line-height: 26px; }
+    .home__text a {
+      text-decoration: underline; }
+      .has-hover .home__text a:not([disabled]):hover {
+        text-decoration: none; }
+    .home__text code {
+      padding: 5px;
+      background-color: #828282; }
+  @media (min-width: 1025px) {
+    .home {
+      padding: 100px 0; } }
+
+/*# sourceMappingURL=main.css.map */

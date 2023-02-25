@@ -1,0 +1,18 @@
+mixin rectangle(center, ...name) 
+
+	if (Array.isArray(name[0]))
+		- name = [...name[0]]
+
+	.rectangle(class!=attributes.class)
+		if (center)
+			each item,index in name
+				- let isCenter = name.length > 1 && index + 1!== Math.round(name.length / 2)
+				if (isCenter)
+					.rectangle__item(class='rectangle__item--' + item + ' ' + 'rectangle__item--middle')
+				else
+					.rectangle__item(class='rectangle__item--' + item + ' ' + 'rectangle__item--center')
+		else
+			each item,index in name.reverse()
+				.rectangle__item(class='rectangle__item--' + item + ' ' + 'rectangle__item--small')
+
+

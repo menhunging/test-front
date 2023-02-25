@@ -1,0 +1,7 @@
+section.skills
+	h2.caption.caption--middle.skills__caption Навыки
+	.skills__list
+		each skill in data.home.skills
+			.skills__item
+				h3.caption.caption--small= skill.name
+				p.textSimple.skills__text= skill.text

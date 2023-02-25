@@ -1,0 +1,91 @@
+.rectangle {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&__item {
+		position: relative;
+		z-index: 3;
+		display: block;
+		width: 28px;
+		height: 28px;
+		border-width: 4px;
+		border-style: solid;
+		border-radius: 8px;
+		transform: rotate(-45deg);
+	}
+
+	&__item--interface {
+		background: conic-gradient(
+			from 225deg at 94.13% 5.18%,
+			#afaafe 0deg,
+			#928cf8 360deg
+		);
+		border-color: #ccc9fd;
+	}
+
+	&__item--funds {
+		background: conic-gradient(
+			from 225deg at 94.19% 5.24%,
+			#ffe975 0deg,
+			#ffcd3d 360deg
+		);
+		border-color: #fff3b5;
+	}
+
+	&__item--CG {
+		background: conic-gradient(
+			from 225deg at 94.19% 5.24%,
+			#fe74a6 0deg,
+			#ee5087 360deg
+		);
+		border-color: #ff99be;
+	}
+
+	&__item--GD {
+		background: conic-gradient(
+			from 225deg at 94.19% 5.24%,
+			#79cafb 0deg,
+			#4bbef2 360deg
+		);
+		border-color: #c0f0ff;
+	}
+
+	&__item--SEO {
+		background: conic-gradient(
+			from 225deg at 94.19% 5.24%,
+			#ffbc89 0deg,
+			#ffa25a 360deg
+		);
+		border-color: #ffd5b4;
+	}
+
+	&__item--information {
+		background: conic-gradient(
+			from 225deg at 94.19% 5.24%,
+			#66dfbc 0deg,
+			#3dc39b 360deg
+		);
+		border-color: #7cf5d2;
+	}
+
+	&__item--center {
+		margin: 0 -5px;
+	}
+
+	&__item--middle {
+		width: 18px;
+		height: 18px;
+		border-width: 3px;
+		border-radius: 4px;
+		z-index: 2;
+	}
+
+	&__item--small {
+		width: 12px;
+		height: 12px;
+		border-width: 0px;
+		border-radius: 2px;
+		margin-right: -3px;
+	}
+}

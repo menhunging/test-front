@@ -1,0 +1,142 @@
+.about {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		background-size: contain;
+		width: 100%;
+		height: 363px;
+		background-repeat: no-repeat;
+		background-position: center;
+		left: 0;
+		top: -294px;
+		z-index: -1;
+		pointer-events: none;
+		background-image: url('data:image/svg+xml,\
+			<svg width="1155" height="363" viewBox="0 0 1155 363" fill="none" xmlns="http://www.w3.org/2000/svg">\
+				<path d="M4.99994 236.118C80.1256 193.852 377.653 282.54 477.325 308.87C576.996 335.199 810.555 393.401 944.443 308.87C1078.33 224.339 1145 3 1145 3" stroke="url(%23paint0_linear_12623_331)" stroke-width="20"/>\
+				<defs>\
+				<linearGradient id="paint0_linear_12623_331" x1="1165.36" y1="159.209" x2="4.25644" y2="160.007" gradientUnits="userSpaceOnUse">\
+				<stop stop-color="%23FCDED1" stop-opacity="0.3"/>\
+				<stop offset="0.217132" stop-color="%23FCDED1" stop-opacity="0"/>\
+				<stop offset="0.721638" stop-color="%23FCDED1" stop-opacity="0"/>\
+				<stop offset="0.99131" stop-color="%23FCDED1" stop-opacity="0.5"/>\
+				</linearGradient>\
+				</defs>\
+			</svg>\
+		');
+	}
+
+	&__experience {
+		width: 100%;
+		max-width: 560px;
+	}
+
+	&__man {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-left: -105px;
+		pointer-events: none;
+		z-index: -1;
+	}
+
+	&__content {
+		margin-top: 30px;
+	}
+
+	&__education {
+		width: 100%;
+		max-width: 269px;
+
+		.caption {
+			text-align: center;
+		}
+
+		.education {
+			padding: 10px 0;
+		}
+	}
+
+	@include tablet() {
+		&::after {
+			top: -260px;
+		}
+
+		&__experience {
+			max-width: 400px;
+		}
+
+		&__education {
+			max-width: 170px;
+		}
+
+		&__man {
+			width: 250px;
+			height: 250px;
+			margin-left: -20px;
+
+			.sprite-man {
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+			}
+		}
+	}
+
+	@include mobile() {
+		&::after {
+			top: -218px;
+			left: -10px;
+			width: calc(100% + 20px);
+			background-image: url('data:image/svg+xml,\
+			<svg width="370" height="123" viewBox="0 0 370 123" fill="none" xmlns="http://www.w3.org/2000/svg">\
+				<path d="M5.00001 75.7341C28.3944 62.5725 121.045 90.1902 152.084 98.3893C183.122 106.588 255.853 124.712 297.546 98.3893C339.239 72.0661 360 3.14037 360 3.14037" stroke="url(%23paint0_linear_12654_136)" stroke-width="20"/>\
+				<defs>\
+				<linearGradient id="paint0_linear_12654_136" x1="366.339" y1="51.7843" x2="4.76845" y2="52.033" gradientUnits="userSpaceOnUse">\
+				<stop stop-color="%23FCDED1" stop-opacity="0.3"/>\
+				<stop offset="0.217132" stop-color="%23FCDED1" stop-opacity="0"/>\
+				<stop offset="0.721638" stop-color="%23FCDED1" stop-opacity="0"/>\
+				<stop offset="0.99131" stop-color="%23FCDED1" stop-opacity="0.5"/>\
+				</linearGradient>\
+				</defs>\
+			</svg>\
+			');
+		}
+
+		&__content {
+			margin-top: 20px;
+		}
+
+		&__man {
+			position: relative;
+			left: 0;
+			top: 0;
+			width: 200px;
+			height: 200px;
+			margin: 40px auto;
+
+			.sprite-man {
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+			}
+		}
+
+		&__education {
+			max-width: 100%;
+
+			& > .caption {
+				text-align: left;
+			}
+
+			.education {
+				padding: 3px 0;
+			}
+		}
+	}
+}

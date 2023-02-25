@@ -1,0 +1,102 @@
+.skills {
+	position: relative;
+
+	&::after {
+		content: "";
+		position: absolute;
+		top: -192px;
+		left: 0;
+		width: 100%;
+		height: 363px;
+		pointer-events: none;
+		background-size: contain;
+		background-repeat: no-repeat;
+		z-index: -1;
+		background-image: url('data:image/svg+xml,\
+			<svg width="1155" height="363" viewBox="0 0 1155 363" fill="none" xmlns="http://www.w3.org/2000/svg">\
+			<path d="M1150 126.882C1074.87 169.148 777.347 80.4595 677.675 54.1303C578.004 27.801 344.445 -30.4006 210.557 54.1303C76.6701 138.661 10 360 10 360" stroke="url(%23paint0_linear_21_11)" stroke-width="20"/>\
+			<defs>\
+			<linearGradient id="paint0_linear_21_11" x1="-10.3566" y1="203.791" x2="1150.74" y2="202.993" gradientUnits="userSpaceOnUse">\
+			<stop offset="0.0833333" stop-color="%23FCDED1" stop-opacity="0"/>\
+			<stop offset="0.322917" stop-color="%23FCDED1" stop-opacity="0.6"/>\
+			<stop offset="0.713542" stop-color="%23FCDED1" stop-opacity="0"/>\
+			<stop offset="0.911458" stop-color="%23FCDED1" stop-opacity="0.2"/>\
+			</linearGradient>\
+			</defs>\
+			</svg>\
+		');
+	}
+
+	&__caption {
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 28px -15px 0;
+	}
+
+	&__item {
+		width: calc(100% / 4);
+		padding: 0 15px;
+	}
+
+	&__caption {
+	}
+
+	&__text {
+		margin-top: 8px;
+	}
+
+	&__line {
+		position: absolute;
+		left: -10px;
+		top: -193px;
+		pointer-events: none;
+		z-index: -1;
+		svg {
+			fill: transparent;
+		}
+	}
+
+	@include tablet {
+		&::after {
+			top: -92px;
+		}
+	}
+
+	@include mobile {
+		&::after {
+			top: -62px;
+			left: -10px;
+			width: calc(100% + 20px);
+			background-image: url('data:image/svg+xml,\
+			<svg width="370" height="122" viewBox="0 0 370 122" fill="none" xmlns="http://www.w3.org/2000/svg">\
+				<path d="M365 46.3975C341.606 59.5591 248.955 31.9414 217.916 23.7423C186.878 15.5433 114.147 -2.58089 72.4543 23.7423C30.7613 50.0655 10 118.991 10 118.991" stroke="url(%23paint0_linear_12654_156)" stroke-width="20"/>\
+				<defs>\
+				<linearGradient id="paint0_linear_12654_156" x1="3.66088" y1="70.3473" x2="365.232" y2="70.0986" gradientUnits="userSpaceOnUse">\
+					<stop offset="0.0833333" stop-color="%23FCDED1" stop-opacity="0"/>\
+					<stop offset="0.322917" stop-color="%23FCDED1" stop-opacity="0.6"/>\
+					<stop offset="0.713542" stop-color="%23FCDED1" stop-opacity="0"/>\
+					<stop offset="0.911458" stop-color="%23FCDED1" stop-opacity="0.2"/>\
+				</linearGradient>\
+				</defs>\
+			</svg>\
+			');
+		}
+
+		&__list {
+			margin: 20px 0 0;
+		}
+
+		&__item {
+			width: 100%;
+			padding: 0;
+			margin-top: 14px;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+}

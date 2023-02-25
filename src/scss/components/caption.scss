@@ -1,0 +1,25 @@
+.caption {
+	font-weight: 700;
+	font-size: 36px;
+	line-height: 50px;
+	color: $color-dark;
+
+	@include mobile() {
+		font-size: 28px;
+		line-height: 40px;
+	}
+
+	&--middle {
+		font-size: 24px;
+		line-height: 29px;
+		@include mobile() {
+			font-size: 20px;
+			line-height: 24px;
+		}
+	}
+
+	&--small {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}

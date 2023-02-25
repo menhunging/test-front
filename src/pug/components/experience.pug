@@ -1,0 +1,15 @@
+.experience
+	each item in data.home.experience.reverse()
+		.experience__item
+			.experience__head
+				span.experience__date= item.date
+				h3.experience__caption.caption.caption--small= item.position
+				+rectangle(false, item.education)(class="experience__rectangle")
+			+company(item)(class="experience__company")
+			.textSimple.experience__text= item.text
+			if item.links
+				ul.experience__links
+					each link in item.links
+						li 
+							a(href=link.url,class='experience__link')= link.name
+

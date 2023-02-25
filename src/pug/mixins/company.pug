@@ -1,0 +1,9 @@
+mixin company(company)
+	.company(class!=attributes.class)
+		if company.companyLogo
+			span.company__logo
+				span(class='sprite-' + company.companyLogo)
+			strong.company__name= company.companyName
+			span.company__adress= company.companyAdress
+		else 
+			span.experience__name= company.companyName

@@ -1,0 +1,60 @@
+.experience {
+	
+	&__item {
+		margin-top: 60px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&__head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	&__date {
+		width: 100%;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		color: $color-gray;
+		margin-bottom: 6px;
+	}
+
+	&__caption {
+		margin-right: 8px;
+	}
+
+	&__company {
+		margin-top: 8px;
+	}
+
+	&__text {
+		margin-top: 6px;
+	}
+
+	&__links {
+		margin-top: 1px;
+
+		li {
+			& + li {
+				margin-top: 2px;
+			}
+		}
+	}
+
+	&__link {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		color: $color-blue;
+		text-decoration: underline;
+		text-underline-offset: 3px;
+	}
+
+	&__rectangle {
+		flex-direction: row-reverse;
+	}
+}

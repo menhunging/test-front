@@ -1,0 +1,26 @@
+extends pug/base
+
+prepend vars
+	-
+		// константы для reactangle
+		const INERFACE = 'interface';
+		const FUNDS = 'funds';
+		const CG = 'CG';
+		const GD = 'GD';
+		const SEO = 'SEO';
+		const INFORMATION = 'information';
+
+append vars
+	//-
+
+block content
+	include pug/data
+
+	.site
+		include pug/components/header
+
+		include pug/pages/home
+
+		include pug/components/footer
+
+	//- include pug/components/analytics

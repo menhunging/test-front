@@ -1,0 +1,104 @@
+-
+	const data = {
+		header: {
+			//- links: {
+			//- 	logo: 'https://ninelines.agency/',
+			//- },
+			menu: [
+				{
+					url: '#hello',
+					name: 'Резюме'
+				},
+				{
+					url: '#necessarily',
+					name: 'О себе'
+				},
+				{
+					url: '#bye',
+					name: 'Навыки'
+				}
+			]
+		},
+
+		home: {
+			//- title: 'гид&nbsp;по <br><span class="for-desktop">бережному</span><span class="for-devices">общению</span>',
+			//- read: 'Читать',
+			experience:[ // выводиться будет так: последний опыт работы выводиться на сайте первым.
+				{
+					date: 'Август 2011 - Ноябрь 2014',
+					position: 'Software Support Engineer',
+					companyLogo: 'integral',
+					companyName: 'Integral',
+					companyAdress: 'Microelectronics factory in Minsk, Belarus',
+					text: 'Supported retail accounting system LS Trade, troubleshoot technical problems.',
+					education: [INFORMATION],
+				},
+				{
+					date: 'Август 2012 - Ноябрь 2013',
+					position: 'Content Specialist',
+					companyLogo: '21vek',
+					companyName: '21vek.by',
+					companyAdress: 'E-commerce store in Minsk, Belarus',
+					text: 'Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team, I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.',
+					education: [SEO],
+				},
+				{
+					date: 'Март 2014 - Февраль 2017',
+					position: 'SEO Specialist → Lead SEO Specialist',
+					companyLogo: 'oz',
+					companyName: 'OZ.by',
+					companyAdress: 'Online bookstore in Minsk, Belarus',
+					text: 'Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team, I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.',
+					links:[
+						{name: 'Annual company report 2016', url: 'http://vk.com/'},
+					],
+					education: [SEO,GD],
+				},
+				{
+					date: 'Январь 2017 - Сентябрь 2018',
+					position: 'Digital Designer',
+					companyLogo: 'jcs',
+					companyName: 'J Creative Solutions',
+					companyAdress: 'Digital agency in Minsk, Belarus',
+					text: 'Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations for clients and indoor purposes.',
+					links:[
+						{name: 'Agency projects', url: 'http://vk.com/'},
+					],
+					education: [GD,CG],
+				},
+				{
+					date: 'Июль 2019',
+					position: 'Freelance Designer',
+					companyName: 'Netherlands, Worldwide',
+					text: 'Available for a project or job in UX/UI, Visual and Product design.',
+					links:[
+						{name: 'Commercial tryouts', url: 'http://vk.com/'},
+						{name: 'Personal projects', url: 'http://vk.com/'},
+					],
+					education: [INERFACE,FUNDS,GD],
+				},
+			],
+			skills:[
+				{name:'Adobe Creative Suite',text:'Photoshop, Illustrator, InDesign, XD, After Effects'},
+				{name:'Prototyping',text:'Sketch, Figma, InVision, Marvel, Principle, Balsamiq'},
+				{name:'Additional',text:'HTML, CSS, Google Analytics, Keynote, Miro'},
+				{name:'Languages',text:'Conversational English and Native Russian'},
+			],
+		},
+
+		//- share: {
+		//- 	caption: 'Поделиться:',
+		//- 	list: ['fb', 'tw', 'vk', 'ok'],
+		//- },
+
+
+
+		//- modal: {
+		//- 	close: 'Закрыть',
+		//- },
+	};
+
+script.
+	window.data = {
+		home: !{JSON.stringify(data.home)},
+	};

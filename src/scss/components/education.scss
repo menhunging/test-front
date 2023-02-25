@@ -1,0 +1,41 @@
+.education {
+	max-width: 150px;
+	margin: 0 auto;
+
+	&__item {
+		text-align: center;
+		margin-top: 34px;
+
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+
+	&__caption {
+	}
+
+	&__text {
+		text-align: center;
+		margin-top: 8px;
+	}
+
+	&__rectangle {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 13px;
+	}
+
+	@include mobile() {
+		display: flex;
+		flex-wrap: wrap;
+		max-width: 100%;
+
+		&__item {
+			width: calc(100% / 2);
+			margin-top: 0;
+			margin-bottom: 24px;
+			padding: 0 12px;
+		}
+	}
+}

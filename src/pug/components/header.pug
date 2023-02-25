@@ -1,0 +1,13 @@
+header.header 
+	.container.header__container
+		nav.header__menu
+			each object, key in data.header.menu
+				a.header__link.js-to-anchor(
+					href=object.url
+					data-link=key
+				)
+					!= object.name
+		button.header__burger.btn.js-burger(type="button")
+			span
+			span
+			span

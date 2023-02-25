@@ -1,0 +1,27 @@
+.company {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 17px;
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto auto 1fr;
+
+	&__logo {
+		margin-right: 8px;
+	}
+
+	&__name {
+		margin-right: 8px;
+	}
+
+	&__adress {
+	}
+
+	@include mobile() {
+		grid-template-columns: auto 1fr;
+
+		&__logo {
+			grid-row: 1/3;
+		}
+	}
+}

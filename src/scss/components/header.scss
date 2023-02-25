@@ -1,0 +1,146 @@
+.header {
+	position: relative;
+	padding-top: 100px;
+	margin-bottom: -21px;
+	z-index: 5;
+
+	&__container {
+		position: static;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+	&__menu {
+		position: relative;
+		transition: (left 0.3s);
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -32px;
+			width: 104px;
+			height: 156px;
+			margin-top: -107px;
+			pointer-events: none;
+			z-index: -1;
+			background-image: url('data:image/svg+xml,\
+			<svg width="104" height="156" viewBox="0 0 104 156" fill="none" xmlns="http://www.w3.org/2000/svg">\
+			<path d="M2.99985 146C58.9997 132.5 88.9999 71 94 0.999984" stroke="url(%23paint0_linear_12623_204)" stroke-width="20"/>\
+			<defs>\
+			<linearGradient id="paint0_linear_12623_204" x1="175.577" y1="-393.879" x2="-862.693" y2="645.723" gradientUnits="userSpaceOnUse">\
+			<stop offset="0.254138" stop-color="%23FCDED1" stop-opacity="0"/>\
+			<stop offset="0.301521" stop-color="%23FCDED1"/>\
+			<stop offset="0.341368" stop-color="%23FCDED1" stop-opacity="0"/>\
+			</linearGradient>\
+			</defs>\
+			</svg>\
+			');
+		}
+
+		@include active {
+			left: 0;
+		}
+	}
+
+	&__link {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 21px;
+		color: $color-dark;
+		margin-left: 30px;
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+
+	&__burger {
+		z-index: 100;
+		flex-direction: column;
+		margin: (-3px / 2) 0;
+		width: 26px;
+		color: $color-dark;
+		display: none;
+
+		span {
+			display: block;
+			margin: 3px 0;
+			width: 26px;
+			height: 2px;
+			background-color: currentColor;
+			transition: $duration-normal;
+		}
+
+		@include active {
+			span {
+				&:first-child {
+					transform: translate(0, 8px) rotate(-45deg);
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:last-child {
+					transform: translate(0, -8px) rotate(45deg);
+				}
+			}
+		}
+	}
+
+	@media (min-width: (($tablet) * 1px)) {
+		&__menu {
+			display: flex !important;
+		}
+	}
+
+	@include tablet() {
+		padding-top: 50px;
+	}
+
+	@include mobile() {
+		padding-top: 29px;
+		margin-bottom: -26px;
+
+		&__menu {
+			position: absolute;
+			left: 100%;
+			top: 0;
+			width: 100%;
+			height: 100vh;
+			background: $color-white;
+			padding: 60px 40px;
+			z-index: 10;
+
+			&::after {
+				top: 27px;
+				left: 50px;
+				margin-top: 0;
+				width: 48px;
+				height: 70px;
+				background-image: url('data:image/svg+xml,\
+				<svg width="48" height="70" viewBox="0 0 48 70" fill="none" xmlns="http://www.w3.org/2000/svg">\
+				<path d="M1.91817 65.0059C26.6376 59.0467 39.8803 31.8994 42.0874 1.00003" stroke="url(%23paint0_linear_12654_8)" stroke-width="10"/>\
+				<defs>\
+				<linearGradient id="paint0_linear_12654_8" x1="78.0971" y1="-173.307" x2="-380.216" y2="285.593" gradientUnits="userSpaceOnUse">\
+				<stop offset="0.254138" stop-color="%23FCDED1" stop-opacity="0"/>\
+				<stop offset="0.301521" stop-color="%23FCDED1"/>\
+				<stop offset="0.341368" stop-color="%23FCDED1" stop-opacity="0"/>\
+				</linearGradient>\
+				</defs>\
+				</svg>\
+				');
+			}
+		}
+
+		&__link {
+			margin: 0px 0 40px;
+			display: table;
+		}
+
+		&__burger {
+			display: flex;
+		}
+	}
+}

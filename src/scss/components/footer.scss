@@ -1,0 +1,33 @@
+.footer {
+	display: flex;
+	justify-content: center;
+	margin-top: auto;
+	width: 100%;
+	padding-top: 200px;
+	padding-bottom: 48px;
+
+	&__picture {
+	}
+
+	@include tablet() {
+		padding-top: 100px;
+	}
+
+	@include mobile() {
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		&__picture {
+			width: 100%;
+			max-width: 280px;
+			height: 195px;
+			$name: "hands";
+			$image: url("../images/#{sprite-image($name)}");
+			$position: (sprite-x($name) * -1px) / 1.25 (sprite-y($name) * -1px) /
+				1.25;
+			$size: (sprite-total-width($name) * 1px) / 1.4
+				(sprite-total-height($name) * 1px) / 1.4;
+			background: $image $position / $size no-repeat;
+		}
+	}
+}

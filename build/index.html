@@ -4,32 +4,32 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width">
-		<link rel="stylesheet" href="./css/main.css?v=1677339436786">
+		<link rel="stylesheet" href="./css/main.css?v=1677423359198">
 	</head>
-	<body>
+	<body class="smooth-scroll">
 		<script>
 			window.data = {
 				home: {"experience":[{"date":"Август 2011 - Ноябрь 2014","position":"Software Support Engineer","companyLogo":"integral","companyName":"Integral","companyAdress":"Microelectronics factory in Minsk, Belarus","text":"Supported retail accounting system LS Trade, troubleshoot technical problems.","education":["information"]},{"date":"Август 2012 - Ноябрь 2013","position":"Content Specialist","companyLogo":"21vek","companyName":"21vek.by","companyAdress":"E-commerce store in Minsk, Belarus","text":"Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team, I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.","education":["SEO"]},{"date":"Март 2014 - Февраль 2017","position":"SEO Specialist → Lead SEO Specialist","companyLogo":"oz","companyName":"OZ.by","companyAdress":"Online bookstore in Minsk, Belarus","text":"Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team, I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.","links":[{"name":"Annual company report 2016","url":"http://vk.com/"}],"education":["SEO","GD"]},{"date":"Январь 2017 - Сентябрь 2018","position":"Digital Designer","companyLogo":"jcs","companyName":"J Creative Solutions","companyAdress":"Digital agency in Minsk, Belarus","text":"Created visuals for digital marketing channels such as social media, promo web and online ads. Developed visual language from scratch or following the branding guidelines. Designed presentations for clients and indoor purposes.","links":[{"name":"Agency projects","url":"http://vk.com/"}],"education":["GD","CG"]},{"date":"Июль 2019","position":"Freelance Designer","companyName":"Netherlands, Worldwide","text":"Available for a project or job in UX/UI, Visual and Product design.","links":[{"name":"Commercial tryouts","url":"http://vk.com/"},{"name":"Personal projects","url":"http://vk.com/"}],"education":["interface","funds","GD"]}],"skills":[{"name":"Adobe Creative Suite","text":"Photoshop, Illustrator, InDesign, XD, After Effects"},{"name":"Prototyping","text":"Sketch, Figma, InVision, Marvel, Principle, Balsamiq"},{"name":"Additional","text":"HTML, CSS, Google Analytics, Keynote, Miro"},{"name":"Languages","text":"Conversational English and Native Russian"}]},
 			};
 		</script>
-		<div class="site">
-			<header class="header"> 
-				<div class="container header__container">
-					<nav class="header__menu"><a class="header__link js-to-anchor" href="#hello" data-link="0">Резюме</a><a class="header__link js-to-anchor" href="#necessarily" data-link="1">О себе</a><a class="header__link js-to-anchor" href="#bye" data-link="2">Навыки</a>
+		<div class="site" data-scroll data-scroll-container data-scroll-id="site">
+			<header class="header" data-scroll data-scroll-sticky data-scroll-target="main" data-scroll-repeat data-scroll-offset="-61" data-scroll-id="header">
+				<div class="container header__container"> 
+					<nav class="header__menu"><a class="header__link js-to-anchor" href="#about">Резюме</a><a class="header__link js-to-anchor" href="#greetings">О себе</a><a class="header__link js-to-anchor" href="#skills">Навыки</a>
 					</nav>
 					<button class="header__burger btn js-burger" type="button"><span></span><span></span><span></span></button>
 				</div>
 			</header>
-			<main>
+			<main class="main">
 				<div class="container">
-					<section class="greetings">
+					<section class="greetings" id="greetings">
 						<div class="greetings__head"><span class="sprite-head greetings__picture"></span></div>
 						<div class="greetings__body">
 							<h2 class="caption greetings__caption">
 								Александр, <br />
 								Джедай
 							</h2>
-							<div class="textSimple greetings__text">
+							<div class="textSimple greetings__text" data-scroll data-scroll-class="greetings__text--visible" data-scroll-repeat data-scroll-speed="1">
 								<p>
 									Как разработчик, я высоко ценю способность воплотить видение дизайнера в жизнь, что считаю очень полезным для бизнеса. 
 									Я получаю огромное удовлетворение, наблюдая за работой от идеи до дизайна, особенно когда она появляется в руках пользователя.
@@ -38,34 +38,34 @@
 							</div>
 						</div>
 						<div class="greetings__info">
-							<ul class="greetings__links">
+							<ul class="greetings__links" data-scroll data-scroll-repeat data-scroll-speed="2">
 								<li> <a href="mailto:mail@gmail.com">mail@gmail.com  </a></li>
 								<li> <a href="tel:+79990000000">+7 (999) 000-00-00</a></li>
 								<li>
 									 г. Иннополис  </li>
 							</ul>
-							<ul class="social greetings__social">
-								<li> <a class="social__link" href="#"> 
+							<ul class="social greetings__social" data-scroll data-scroll-repeat data-scroll-speed="3">
+								<li> <a class="social__link" href="https://www.facebook.com" target="_blank"> 
 										<svg>
 											<use xlink:href="./images/sprites.svg#facebook"></use>
 										</svg></a></li>
-								<li> <a class="social__link" href="#"> 
+								<li> <a class="social__link" href="http://vk.com" target="_blank"> 
 										<svg>
 											<use xlink:href="./images/sprites.svg#vk"></use>
 										</svg></a></li>
-								<li> <a class="social__link" href="#"> 
+								<li> <a class="social__link" href="https://web.telegram.org" target="_blank"> 
 										<svg>
 											<use xlink:href="./images/sprites.svg#telegram"></use>
 										</svg></a></li>
 							</ul>
 						</div>
 					</section>
-					<section class="about">
+					<section class="about" id="about">
 						<div class="about__experience">
-							<h2 class="caption caption--middle about__caption">Опыт работы</h2>
+							<h2 class="caption caption--middle about__caption" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="2">Опыт работы</h2>
 							<div class="about__content">
 								<div class="experience">
-									<div class="experience__item">
+									<div class="experience__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="experience__head"><span class="experience__date">Июль 2019</span>
 											<h3 class="experience__caption caption caption--small">Freelance Designer</h3>
 											<div class="rectangle experience__rectangle">
@@ -82,7 +82,7 @@
 											<li> <a class="experience__link" href="http://vk.com/">Personal projects</a></li>
 										</ul>
 									</div>
-									<div class="experience__item">
+									<div class="experience__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="experience__head"><span class="experience__date">Январь 2017 - Сентябрь 2018</span>
 											<h3 class="experience__caption caption caption--small">Digital Designer</h3>
 											<div class="rectangle experience__rectangle">
@@ -97,7 +97,7 @@
 											<li> <a class="experience__link" href="http://vk.com/">Agency projects</a></li>
 										</ul>
 									</div>
-									<div class="experience__item">
+									<div class="experience__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="experience__head"><span class="experience__date">Март 2014 - Февраль 2017</span>
 											<h3 class="experience__caption caption caption--small">SEO Specialist → Lead SEO Specialist</h3>
 											<div class="rectangle experience__rectangle">
@@ -112,7 +112,7 @@
 											<li> <a class="experience__link" href="http://vk.com/">Annual company report 2016</a></li>
 										</ul>
 									</div>
-									<div class="experience__item">
+									<div class="experience__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="experience__head"><span class="experience__date">Август 2012 - Ноябрь 2013</span>
 											<h3 class="experience__caption caption caption--small">Content Specialist</h3>
 											<div class="rectangle experience__rectangle">
@@ -123,7 +123,7 @@
 										</div>
 										<div class="textSimple experience__text">Improved website performance and user experience of the biggest online bookstore OZ in Belarus, being a part of the marketing team, I interpreted Google Analytics data to IT, content and marketing colleagues. Advised on tech and content optimization strategy, automated processes, provided reports, increased organic traffic up to 150%.</div>
 									</div>
-									<div class="experience__item">
+									<div class="experience__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="experience__head"><span class="experience__date">Август 2011 - Ноябрь 2014</span>
 											<h3 class="experience__caption caption caption--small">Software Support Engineer</h3>
 											<div class="rectangle experience__rectangle">
@@ -137,12 +137,12 @@
 								</div>
 							</div>
 						</div>
-						<div class="about__man"><span class="sprite-man"></span></div>
+						<div class="about__man" data-scroll data-scroll-sticky data-scroll-target=".about" data-scroll-repeat data-scroll-offset="-61"><span class="sprite-man"></span></div>
 						<div class="about__education">
-							<h2 class="caption caption--middle about__caption">Образование</h2>
+							<h2 class="caption caption--middle about__caption" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="2">Образование</h2>
 							<div class="about__content">
 								<div class="education">
-									<div class="education__item">
+									<div class="education__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="education__rectangle">
 											<div class="rectangle">
 												<div class="rectangle__item rectangle__item--GD rectangle__item--middle"></div>
@@ -153,7 +153,7 @@
 										<h2 class="caption caption--small education__caption">Interface Design:<br/> Web &#38; Mobile</h2>
 										<p class="textSimple education__text">IT-Academy, 2020</p>
 									</div>
-									<div class="education__item">
+									<div class="education__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="education__rectangle">
 											<div class="rectangle">
 												<div class="rectangle__item rectangle__item--funds rectangle__item--center"></div>
@@ -162,7 +162,7 @@
 										<h2 class="caption caption--small education__caption">Fundamentals<br/> of Usability</h2>
 										<p class="textSimple education__text">Skillshare, Oct 2018</p>
 									</div>
-									<div class="education__item">
+									<div class="education__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="education__rectangle">
 											<div class="rectangle">
 												<div class="rectangle__item rectangle__item--CG rectangle__item--center"></div>
@@ -171,7 +171,7 @@
 										<h2 class="caption caption--small education__caption">CG Artist</h2>
 										<p class="textSimple education__text">Polygon CG School, May-Sep 2017</p>
 									</div>
-									<div class="education__item">
+									<div class="education__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="education__rectangle">
 											<div class="rectangle">
 												<div class="rectangle__item rectangle__item--GD rectangle__item--center"></div>
@@ -180,7 +180,7 @@
 										<h2 class="caption caption--small education__caption">Graphic Design</h2>
 										<p class="textSimple education__text">Belarusian State Academy of Arts, 2015 - 2017 Postgraduate Diploma</p>
 									</div>
-									<div class="education__item">
+									<div class="education__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="education__rectangle">
 											<div class="rectangle">
 												<div class="rectangle__item rectangle__item--SEO rectangle__item--center"></div>
@@ -189,7 +189,7 @@
 										<h2 class="caption caption--small education__caption">SEO Specialist</h2>
 										<p class="textSimple education__text">ARTOX Media, Jun-Aug 2012</p>
 									</div>
-									<div class="education__item">
+									<div class="education__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 										<div class="education__rectangle">
 											<div class="rectangle">
 												<div class="rectangle__item rectangle__item--information rectangle__item--center"></div>
@@ -203,22 +203,22 @@
 							</div>
 						</div>
 					</section>
-					<section class="skills">
-						<h2 class="caption caption--middle skills__caption">Навыки</h2>
+					<section class="skills" id="skills">
+						<h2 class="caption caption--middle skills__caption" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="2">Навыки</h2>
 						<div class="skills__list">
-							<div class="skills__item">
+							<div class="skills__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 								<h3 class="caption caption--small">Adobe Creative Suite</h3>
 								<p class="textSimple skills__text">Photoshop, Illustrator, InDesign, XD, After Effects</p>
 							</div>
-							<div class="skills__item">
+							<div class="skills__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 								<h3 class="caption caption--small">Prototyping</h3>
 								<p class="textSimple skills__text">Sketch, Figma, InVision, Marvel, Principle, Balsamiq</p>
 							</div>
-							<div class="skills__item">
+							<div class="skills__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 								<h3 class="caption caption--small">Additional</h3>
 								<p class="textSimple skills__text">HTML, CSS, Google Analytics, Keynote, Miro</p>
 							</div>
-							<div class="skills__item">
+							<div class="skills__item" data-scroll="data-scroll" data-scroll-repeat="data-scroll-repeat" data-scroll-speed="1">
 								<h3 class="caption caption--small">Languages</h3>
 								<p class="textSimple skills__text">Conversational English and Native Russian</p>
 							</div>
@@ -235,7 +235,7 @@
 				document.getElementsByTagName('head')[0].appendChild(script);
 			}
 		</script>
-		<script src="./js/vendor.js?v=1677339436787"></script>
-		<script src="./js/main.js?v=1677339436787"></script>
+		<script src="./js/vendor.js?v=1677423359199"></script>
+		<script src="./js/main.js?v=1677423359199"></script>
 	</body>
 </html>

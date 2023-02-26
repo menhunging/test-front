@@ -1,10 +1,9 @@
-header.header 
-	.container.header__container
+header.header(data-scroll data-scroll-sticky data-scroll-target="main" data-scroll-repeat data-scroll-offset="-61" data-scroll-id="header")
+	.container.header__container 
 		nav.header__menu
-			each object, key in data.header.menu
+			each object in data.header.menu
 				a.header__link.js-to-anchor(
 					href=object.url
-					data-link=key
 				)
 					!= object.name
 		button.header__burger.btn.js-burger(type="button")

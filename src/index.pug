@@ -10,13 +10,17 @@ prepend vars
 		const SEO = 'SEO';
 		const INFORMATION = 'information';
 
+		// настройки анимации defaut
+		const settingsAnimBlock = {'data-scroll':'data-scroll', 'data-scroll-repeat':'data-scroll-repeat', 'data-scroll-speed': '1'}
+		const settingsAnimCaption = {'data-scroll':'data-scroll', 'data-scroll-repeat':'data-scroll-repeat', 'data-scroll-speed': '2'}
+
 append vars
-	//-
+
 
 block content
 	include pug/data
 
-	.site
+	.site(data-scroll data-scroll-container data-scroll-id="site")
 		include pug/components/header
 
 		include pug/pages/home

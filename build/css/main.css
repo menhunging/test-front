@@ -709,9 +709,14 @@ iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
-  min-height: var(--vh);
-  overflow: hidden; }
+  overflow: hidden;
+  padding-top: 80px; }
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .site {
+      padding-top: 50px; } }
+  @media (max-width: 767px) {
+    .site {
+      padding-top: 29px; } }
   .site section + section {
     margin-top: 200px; }
     @media (min-width: 768px) and (max-width: 1024px) {
@@ -720,6 +725,9 @@ iframe {
     @media (max-width: 767px) {
       .site section + section {
         margin-top: 40px; } }
+
+.scroll-fade {
+  opacity: 1 !important; }
 
 /* stylelint-disable */
 /*
@@ -800,8 +808,8 @@ iframe {
 /* stylelint-enable */
 .header {
   position: relative;
-  padding-top: 100px;
-  margin-bottom: -21px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   z-index: 5; }
   .header__container {
     position: static;
@@ -836,9 +844,16 @@ iframe {
     font-size: 18px;
     line-height: 21px;
     color: #282a33;
-    margin-left: 30px; }
+    margin-left: 30px;
+    -webkit-transition: color 0.3s;
+    -o-transition: color 0.3s;
+    transition: color 0.3s; }
     .header__link:first-child {
       margin-left: 0; }
+    .header__link.isActive {
+      color: #402286; }
+    .header__link:hover {
+      color: #402286; }
   .header__burger {
     z-index: 100;
     -webkit-box-orient: vertical;
@@ -868,41 +883,39 @@ iframe {
       -webkit-transform: translate(0, -8px) rotate(45deg);
           -ms-transform: translate(0, -8px) rotate(45deg);
               transform: translate(0, -8px) rotate(45deg); }
+  .header.is-inview {
+    background-color: #fafafa;
+    -webkit-box-shadow: 0px 0px 5px #828282;
+            box-shadow: 0px 0px 5px #828282; }
   @media (min-width: 768px) {
     .header__menu {
       display: -webkit-box !important;
       display: -ms-flexbox !important;
       display: flex !important; } }
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .header {
-      padding-top: 50px; } }
   @media (max-width: 767px) {
-    .header {
-      padding-top: 29px;
-      margin-bottom: -26px; }
-      .header__menu {
-        position: absolute;
-        left: 100%;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        background: #fff;
-        padding: 60px 40px;
-        z-index: 10; }
-        .header__menu::after {
-          top: 27px;
-          left: 50px;
-          margin-top: 0;
-          width: 48px;
-          height: 70px;
-          background-image: url('data:image/svg+xml,				<svg width="48" height="70" viewBox="0 0 48 70" fill="none" xmlns="http://www.w3.org/2000/svg">				<path d="M1.91817 65.0059C26.6376 59.0467 39.8803 31.8994 42.0874 1.00003" stroke="url(%23paint0_linear_12654_8)" stroke-width="10"/>				<defs>				<linearGradient id="paint0_linear_12654_8" x1="78.0971" y1="-173.307" x2="-380.216" y2="285.593" gradientUnits="userSpaceOnUse">				<stop offset="0.254138" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.301521" stop-color="%23FCDED1"/>				<stop offset="0.341368" stop-color="%23FCDED1" stop-opacity="0"/>				</linearGradient>				</defs>				</svg>				'); }
-      .header__link {
-        margin: 0px 0 40px;
-        display: table; }
-      .header__burger {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex; } }
+    .header__menu {
+      position: absolute;
+      left: 100%;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      background: #fafafa;
+      padding: 60px 40px;
+      z-index: 10; }
+      .header__menu::after {
+        top: 27px;
+        left: 50px;
+        margin-top: 0;
+        width: 48px;
+        height: 70px;
+        background-image: url('data:image/svg+xml,				<svg width="48" height="70" viewBox="0 0 48 70" fill="none" xmlns="http://www.w3.org/2000/svg">				<path d="M1.91817 65.0059C26.6376 59.0467 39.8803 31.8994 42.0874 1.00003" stroke="url(%23paint0_linear_12654_8)" stroke-width="10"/>				<defs>				<linearGradient id="paint0_linear_12654_8" x1="78.0971" y1="-173.307" x2="-380.216" y2="285.593" gradientUnits="userSpaceOnUse">				<stop offset="0.254138" stop-color="%23FCDED1" stop-opacity="0"/>				<stop offset="0.301521" stop-color="%23FCDED1"/>				<stop offset="0.341368" stop-color="%23FCDED1" stop-opacity="0"/>				</linearGradient>				</defs>				</svg>				'); }
+    .header__link {
+      margin: 0px 0 40px;
+      display: table; }
+    .header__burger {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; } }
 
 .footer {
   display: -webkit-box;
@@ -978,6 +991,8 @@ iframe {
     border-radius: 5px;
     background-color: #282a33;
     padding: 6px; }
+    .social__link:hover {
+      background-color: #402286; }
 
 .rectangle {
   position: relative;
@@ -1160,7 +1175,16 @@ iframe {
   .greetings__info {
     min-width: 270px; }
   .greetings__text {
-    margin-top: 30px; }
+    position: relative;
+    margin-top: 30px;
+    opacity: 0;
+    top: 30px;
+    -webkit-transition: opacity 2s, top 1.5s;
+    -o-transition: opacity 2s, top 1.5s;
+    transition: opacity 2s, top 1.5s; }
+  .greetings__text--visible {
+    opacity: 1;
+    top: 0; }
   .greetings__links {
     position: relative;
     font-weight: 400;
@@ -1168,6 +1192,8 @@ iframe {
     color: #282a33; }
     .greetings__links li + li {
       margin-top: 15px; }
+    .greetings__links a:hover {
+      color: #402286; }
   .greetings__social {
     margin-top: 15px; }
   @media (min-width: 768px) and (max-width: 1024px) {
@@ -1267,7 +1293,10 @@ iframe {
       top: 0;
       width: 200px;
       height: 200px;
-      margin: 40px auto; }
+      margin: 40px auto;
+      -webkit-transform: none !important;
+          -ms-transform: none !important;
+              transform: none !important; }
       .about__man .sprite-man {
         width: 100%;
         height: 100%;
@@ -1330,6 +1359,88 @@ iframe {
       margin-top: 14px; }
       .skills__item:first-child {
         margin-top: 0; } }
+
+html.has-scroll-smooth {
+  overflow: hidden; }
+
+html.has-scroll-dragging {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.has-scroll-smooth body {
+  overflow: hidden; }
+
+.has-scroll-smooth [data-scroll-container] {
+  min-height: 100vh; }
+
+[data-scroll-direction="horizontal"] [data-scroll-container] {
+  height: 100vh;
+  display: inline-block;
+  white-space: nowrap; }
+
+[data-scroll-direction="horizontal"] [data-scroll-section] {
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  height: 100%; }
+
+.c-scrollbar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 11px;
+  height: 100vh;
+  -webkit-transform-origin: center right;
+      -ms-transform-origin: center right;
+          transform-origin: center right;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+  transition: opacity 0.3s, -webkit-transform 0.3s;
+  -o-transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+  opacity: 0; }
+  .c-scrollbar:hover {
+    -webkit-transform: scaleX(1.45);
+        -ms-transform: scaleX(1.45);
+            transform: scaleX(1.45); }
+  .c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7px;
+    border-radius: 10px;
+    margin: 2px;
+    cursor: -webkit-grab;
+    cursor: grab; }
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+  opacity: 1; }
+
+[data-scroll-direction="horizontal"] .c-scrollbar {
+  width: 100%;
+  height: 10px;
+  top: auto;
+  bottom: 0;
+  -webkit-transform: scaleY(1);
+      -ms-transform: scaleY(1);
+          transform: scaleY(1); }
+  [data-scroll-direction="horizontal"] .c-scrollbar:hover {
+    -webkit-transform: scaleY(1.3);
+        -ms-transform: scaleY(1.3);
+            transform: scaleY(1.3); }
+  [data-scroll-direction="horizontal"] .c-scrollbar_thumb {
+    right: auto;
+    bottom: 0; }
+
+.has-scroll-dragging .c-scrollbar_thumb {
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
 
 .home {
   padding: 80px 20px; }

@@ -16,5 +16,9 @@
 		border-radius: 5px;
 		background-color: $color-dark;
 		padding: 6px;
+
+		&:hover {
+			background-color: $color-hover;
+		}
 	}
 }

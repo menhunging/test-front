@@ -1,4 +1,5 @@
 import helpers from '../helpers';
+import scrollPage from '../modules/scroll';
 
 function openMenu() {
 	return new Promise((resolve) => {
@@ -51,9 +52,11 @@ function toggleMenu(event) {
 	if ($(event.currentTarget).hasClass('is-active')) {
 		$(event.currentTarget).removeClass('is-active');
 		closeMenu();
+		scrollPage.start();		
 	} else {
 		$(event.currentTarget).addClass('is-active');
 		openMenu();
+		scrollPage.stop();
 	}
 }
 

@@ -33,7 +33,7 @@ body {
 	text-rendering: optimizeLegibility;
 	text-size-adjust: 100%;
 	-webkit-tap-highlight-color: transparent;
-	background-color: #fafafa;
+	background-color: $color-site;
 }
 
 main {
@@ -149,10 +149,19 @@ iframe {
 .site {
 	display: flex;
 	flex-direction: column;
-	min-height: 100vh; // fallback
+	// min-height: 100vh; // fallback
 	// stylelint-disable-next-line
-	min-height: var(--vh);
+	// min-height: var(--vh);
 	overflow: hidden;
+	padding-top: 80px;
+
+	@include tablet() {
+		padding-top: 50px;
+	}
+
+	@include mobile() {
+		padding-top: 29px;
+	}
 
 	section {
 		& + section {
@@ -167,6 +176,10 @@ iframe {
 			}
 		}
 	}
+}
+
+.scroll-fade{
+	opacity: 1!important;
 }
 
 /* stylelint-disable */

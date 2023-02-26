@@ -1,11 +1,11 @@
-section.about
+section.about#about
 	.about__experience
-		h2.caption.caption--middle.about__caption Опыт работы
+		h2.caption.caption--middle.about__caption&attributes(settingsAnimCaption) Опыт работы
 		.about__content
 			include ../components/experience
-	.about__man
+	.about__man(data-scroll data-scroll-sticky data-scroll-target=".about" data-scroll-repeat data-scroll-offset="-61")
 		span.sprite-man
 	.about__education
-		h2.caption.caption--middle.about__caption Образование
+		h2.caption.caption--middle.about__caption&attributes(settingsAnimCaption) Образование
 		.about__content
 			include ../components/education

@@ -23,9 +23,9 @@ function init() {
 		$(".js-to-anchor").removeClass("isActive");
 		$(e.currentTarget).addClass("isActive");
 
-		const id = $(e.currentTarget).attr("href");
-		const speed = 500;
-		const offset = -$(".header").outerHeight(true) - 20;
+		let id = $(e.currentTarget).attr("href");
+		let speed = 500;
+		let offset = -$(".header").outerHeight(true) - 80;
 
 		if ($(".header").hasClass("is-menu-opened")) {
 			header.closeMenu().then(() => {
@@ -38,22 +38,50 @@ function init() {
 		}
 	});
 
+	$(".button-up").on("click", () => {
+		locoScroll.scrollTo(0);
+	});
+
 	locoScroll.on("scroll", (args) => {
 		if (typeof args.currentElements["site"] === "object") {
 			let progress = args.currentElements["site"].progress;
 			let percent = Math.round(progress * 100 - 24) * 2;
-			console.log(percent + "%");
+			console.log(percent);
+
+			if (percent <= 10) {
+				$(".button-up").addClass("hidden");
+			} else {
+				$(".button-up").removeClass("hidden");
+			}
+
+			if (percent >= 90) {
+				$(".button-up").addClass("finish");
+			} else {
+				$(".button-up").removeClass("finish");
+			}
+			$(".button-up__percent").text(percent + "%");
 			// ouput log example: 0.34
 			// gsap example : myGsapAnimation.progress(progress);
 		}
 	});
 
+	// locoScroll.on("call", (func, state, event) => {
+	// 	switch (func) {
+	// 		case "about":
+	// 			if (state === "enter") {
+	// 			}
+	// 			break;
+	// 	}
+	// });
+
 	if ($(window).width() < 768) {
-		console.log('123')
-		$('.about__man').removeAttr("data-scroll");
+		$(".about__man").removeAttr("data-scroll");
 	}
 }
 
+function destroy() {
+	locoScroll.destroy();
+}
 function update() {
 	locoScroll.update();
 }
@@ -71,4 +99,5 @@ export default {
 	update,
 	start,
 	stop,
+	destroy,
 };

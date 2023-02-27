@@ -20,11 +20,16 @@ append vars
 block content
 	include pug/data
 
-	.site(data-scroll data-scroll-container data-scroll-id="site")
-		include pug/components/header
+	//- include pug/components/preloader
 
-		include pug/pages/home
+	.site.smooth-scroll
+		.site__wrapper(data-scroll data-scroll-container data-scroll-id="site")
+			include pug/components/header
 
-		include pug/components/footer
+			include pug/pages/home
+
+			include pug/components/footer
 
 	//- include pug/components/analytics
+
+	include pug/components/buttonUp

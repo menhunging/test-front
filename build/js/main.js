@@ -485,7 +485,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_actualYear__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/actualYear */ "./src/js/modules/actualYear.js");
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/header */ "./src/js/components/header.js");
 /* harmony import */ var _modules_scroll__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/scroll */ "./src/js/modules/scroll.js");
-/* harmony import */ var _modules_lazyLoading__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/lazyLoading */ "./src/js/modules/lazyLoading.js");
+/* harmony import */ var _modules_preloader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/preloader */ "./src/js/modules/preloader.js");
+/* harmony import */ var _modules_lazyLoading__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/lazyLoading */ "./src/js/modules/lazyLoading.js");
+
 
 
 
@@ -503,8 +505,9 @@ Object(_modules_actualYear__WEBPACK_IMPORTED_MODULE_5__["actualYear"])();
 // scrollToAnchor.init();
 
 _components_header__WEBPACK_IMPORTED_MODULE_6__["default"].init();
-_modules_lazyLoading__WEBPACK_IMPORTED_MODULE_8__["default"].init();
+_modules_lazyLoading__WEBPACK_IMPORTED_MODULE_9__["default"].init();
 _modules_scroll__WEBPACK_IMPORTED_MODULE_7__["default"].init();
+// preloader.init();
 
 /***/ }),
 
@@ -577,6 +580,34 @@ var trigger = function trigger(img) {
 
 /***/ }),
 
+/***/ "./src/js/modules/preloader.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/preloader.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scroll */ "./src/js/modules/scroll.js");
+
+function init() {
+  var preloader = $(".preloader");
+  var preloaderImg = $(".preloader__img");
+  $(window).on("load", function () {
+    preloaderImg.addClass("load");
+    setTimeout(function () {
+      $('.site').addClass('load');
+      preloader.addClass('load').remove();
+    }, 2000);
+  });
+}
+/* harmony default export */ __webpack_exports__["default"] = ({
+  init: init
+});
+
+/***/ }),
+
 /***/ "./src/js/modules/scroll.js":
 /*!**********************************!*\
   !*** ./src/js/modules/scroll.js ***!
@@ -614,7 +645,7 @@ function init() {
     $(e.currentTarget).addClass("isActive");
     var id = $(e.currentTarget).attr("href");
     var speed = 500;
-    var offset = -$(".header").outerHeight(true) - 20;
+    var offset = -$(".header").outerHeight(true) - 80;
     if ($(".header").hasClass("is-menu-opened")) {
       _components_header__WEBPACK_IMPORTED_MODULE_1__["default"].closeMenu().then(function () {
         $(".js-burger").removeClass("is-active");
@@ -631,20 +662,45 @@ function init() {
       });
     }
   });
+  $(".button-up").on("click", function () {
+    locoScroll.scrollTo(0);
+  });
   locoScroll.on("scroll", function (args) {
     if (_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(args.currentElements["site"]) === "object") {
       var progress = args.currentElements["site"].progress;
       var percent = Math.round(progress * 100 - 24) * 2;
-      console.log(percent + "%");
+      console.log(percent);
+      if (percent <= 10) {
+        $(".button-up").addClass("hidden");
+      } else {
+        $(".button-up").removeClass("hidden");
+      }
+      if (percent >= 90) {
+        $(".button-up").addClass("finish");
+      } else {
+        $(".button-up").removeClass("finish");
+      }
+      $(".button-up__percent").text(percent + "%");
       // ouput log example: 0.34
       // gsap example : myGsapAnimation.progress(progress);
     }
   });
 
+  // locoScroll.on("call", (func, state, event) => {
+  // 	switch (func) {
+  // 		case "about":
+  // 			if (state === "enter") {
+  // 			}
+  // 			break;
+  // 	}
+  // });
+
   if ($(window).width() < 768) {
-    console.log('123');
-    $('.about__man').removeAttr("data-scroll");
+    $(".about__man").removeAttr("data-scroll");
   }
+}
+function destroy() {
+  locoScroll.destroy();
 }
 function update() {
   locoScroll.update();
@@ -659,7 +715,8 @@ function stop() {
   init: init,
   update: update,
   start: start,
-  stop: stop
+  stop: stop,
+  destroy: destroy
 });
 
 /***/ }),

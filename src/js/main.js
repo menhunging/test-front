@@ -10,6 +10,8 @@ import preloader from "./modules/preloader";
 import lazyLoading from "./modules/lazyLoading";
 // import scrollToAnchor from './modules/scrollToAnchor';
 
+preloader.init();
+
 ieFix();
 vhFix();
 actualYear();
@@ -18,4 +20,5 @@ actualYear();
 header.init();
 lazyLoading.init();
 scrollPage.init();
-// preloader.init();
+
+

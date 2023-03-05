@@ -499,6 +499,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // import scrollToAnchor from './modules/scrollToAnchor';
 
+_modules_preloader__WEBPACK_IMPORTED_MODULE_8__["default"].init();
 Object(_vendor_ie_fix__WEBPACK_IMPORTED_MODULE_3__["ieFix"])();
 Object(_vendor_vh_fix__WEBPACK_IMPORTED_MODULE_4__["vhFix"])();
 Object(_modules_actualYear__WEBPACK_IMPORTED_MODULE_5__["actualYear"])();
@@ -507,7 +508,6 @@ Object(_modules_actualYear__WEBPACK_IMPORTED_MODULE_5__["actualYear"])();
 _components_header__WEBPACK_IMPORTED_MODULE_6__["default"].init();
 _modules_lazyLoading__WEBPACK_IMPORTED_MODULE_9__["default"].init();
 _modules_scroll__WEBPACK_IMPORTED_MODULE_7__["default"].init();
-// preloader.init();
 
 /***/ }),
 
@@ -589,16 +589,29 @@ var trigger = function trigger(img) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _scroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scroll */ "./src/js/modules/scroll.js");
-
+var preloader = $(".preloader");
+var preloaderImg = $(".preloader__img");
+var scripts = document.scripts;
+var scriptsCount = scripts.length;
+var scriptsTotalCount = 0;
+var scriptsLoadedCount = 0;
+for (var i = 0; i < scriptsCount; i++) {
+  if (scripts[i].src) {
+    scriptsTotalCount++;
+    scripts[i].onload = scriptLoaded;
+    scripts[i].onerror = scriptLoaded;
+  }
+}
+function scriptLoaded() {
+  scriptsLoadedCount++;
+  var percentTransform = (scriptsLoadedCount * 100 / scriptsTotalCount).toFixed();
+  preloaderImg.css('transform', "translate(".concat(percentTransform, "vw, -").concat(percentTransform, "vh)"));
+}
 function init() {
-  var preloader = $(".preloader");
-  var preloaderImg = $(".preloader__img");
   $(window).on("load", function () {
     preloaderImg.addClass("load");
     setTimeout(function () {
-      $('.site').addClass('load');
-      preloader.addClass('load').remove();
+      preloader.addClass("load");
     }, 2000);
   });
 }
@@ -685,15 +698,6 @@ function init() {
       // gsap example : myGsapAnimation.progress(progress);
     }
   });
-
-  // locoScroll.on("call", (func, state, event) => {
-  // 	switch (func) {
-  // 		case "about":
-  // 			if (state === "enter") {
-  // 			}
-  // 			break;
-  // 	}
-  // });
 
   if ($(window).width() < 768) {
     $(".about__man").removeAttr("data-scroll");

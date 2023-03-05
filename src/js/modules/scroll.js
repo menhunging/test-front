@@ -65,15 +65,6 @@ function init() {
 		}
 	});
 
-	// locoScroll.on("call", (func, state, event) => {
-	// 	switch (func) {
-	// 		case "about":
-	// 			if (state === "enter") {
-	// 			}
-	// 			break;
-	// 	}
-	// });
-
 	if ($(window).width() < 768) {
 		$(".about__man").removeAttr("data-scroll");
 	}

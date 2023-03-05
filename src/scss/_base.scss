@@ -149,9 +149,6 @@ iframe {
 .site {
 	display: flex;
 	flex-direction: column;
-	// min-height: 100vh; // fallback
-	// stylelint-disable-next-line
-	// min-height: var(--vh);
 	overflow: hidden;
 	padding-top: 80px;
 

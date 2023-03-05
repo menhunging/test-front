@@ -4,16 +4,31 @@
 	top: 0;
 	width: 100%;
 	height: 100vh;
+	background-color: $color-site;
+	z-index: 5;
+	opacity: 1;
+	transition: 1s;
+
+	&.load {
+		opacity: 0;
+		pointer-events: none;
+	}
 
 	&__img {
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		transform: translate(-90%, 80%);
+		transform: translate(-50vw, 100vh);
 		transition: 2s;
 
 		&.load {
-			transform: translate(350%, -150%);
+			transform: translate(100vw, -100vh)!important;
+		}
+
+		@include mobile(){
+			background-size: 620px;
+			width: 320px;
+			height: 320px;
 		}
 	}
 }

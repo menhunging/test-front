@@ -682,7 +682,6 @@ function init() {
     if (_babel_runtime_helpers_typeof__WEBPACK_IMPORTED_MODULE_0___default()(args.currentElements["site"]) === "object") {
       var progress = args.currentElements["site"].progress;
       var percent = Math.round(progress * 100 - 24) * 2;
-      console.log(percent);
       if (percent <= 10) {
         $(".button-up").addClass("hidden");
       } else {

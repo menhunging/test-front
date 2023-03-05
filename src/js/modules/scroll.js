@@ -46,7 +46,6 @@ function init() {
 		if (typeof args.currentElements["site"] === "object") {
 			let progress = args.currentElements["site"].progress;
 			let percent = Math.round(progress * 100 - 24) * 2;
-			console.log(percent);
 
 			if (percent <= 10) {
 				$(".button-up").addClass("hidden");

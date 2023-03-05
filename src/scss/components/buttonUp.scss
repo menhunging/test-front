@@ -22,7 +22,7 @@
 
 		.button-up__arrow {
 			&::after {
-				border-bottom-color: $color-white;
+				color: $color-white;
 			}
 		}
 	}
@@ -43,12 +43,10 @@
 		justify-content: center;
 
 		&::after {
-			content: "";
+			content: "\2191";
 			position: relative;
-			border-top: solid 0px transparent;
-			border-bottom: solid 10px $color-dark;
-			border-left: solid 5px transparent;
-			border-right: solid 5px transparent;
+			color: $color-dark;
+			font-size: 30px;
 			transition: border 0.3s;
 		}
 	}

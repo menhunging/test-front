@@ -23,8 +23,8 @@
 			height: 195px;
 			$name: "hands";
 			$image: url("../images/#{sprite-image($name)}");
-			$position: (sprite-x($name) * -1px) / 1.25 (sprite-y($name) * -1px) /
-				1.25;
+			$position: (sprite-x($name) * -1px) - 50 / 1.35
+				(sprite-y($name) * -1px) / 1.35;
 			$size: (sprite-total-width($name) * 1px) / 1.4
 				(sprite-total-height($name) * 1px) / 1.4;
 			background: $image $position / $size no-repeat;
